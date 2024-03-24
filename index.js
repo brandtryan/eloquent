@@ -8,30 +8,23 @@ const magenta = "\x1b[35m%s\x1b[0m";
 const cyan = "\x1b[36m%s\x1b[0m";
 const white = "\x1b[37m%s\x1b[0m";
 
-// Chapter 2 Exercises
-
-// // Looping a Triangle
-// const lowpass = (cutoff) => (n) => n <= cutoff;
-// const lt7 = lowpass(7);
-// let str = "#";
-
-// while (lt7(str.length)) {
-//   cl(blue, str);
-//   str = str.concat("#");
+// let total = 0,
+//   count = 1;
+// while (count <= 10) {
+//   total += count;
+//   count += 1;
 // }
+// cl(total);
 
-// FizzBuzz
-let number = 0;
-const fits = (x, number) => Number.isInteger(number / x);
-
-for (; number < 101; number++) {
-  if (fits(5, number) && fits(3, number)) {
-    console.log("FizzBuzz");
-  } else if (fits(3, number)) {
-    console.log("Fizz");
-  } else if (fits(5, number) && !fits(3, number)) {
-    console.log("Buzz");
-  } else {
-    console.log(number);
+function repeat(n, action) {
+  for (let i = 0; i < n; i++) {
+    action(i);
   }
 }
+repeat(3, console.log);
+
+let labels = [];
+repeat(5, (i) => {
+  labels.push(`Unit ${i + 1}`);
+});
+cl(labels);
